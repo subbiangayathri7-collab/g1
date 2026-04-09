@@ -1,0 +1,18 @@
+name: DB Password Secure Demo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  db:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Use DB Password
+        env:
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        run: |
+          echo "Connecting to DB securely"
+          echo "DB password received safely"
