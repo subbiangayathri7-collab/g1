@@ -1,0 +1,16 @@
+name: Secret Access Demo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Access Secret
+        run: echo "API KEY = ${{ secrets.API_KEY }}"
