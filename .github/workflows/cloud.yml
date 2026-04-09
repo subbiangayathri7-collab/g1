@@ -1,4 +1,4 @@
-name: API Authentication Workflow
+name: API Auth Test
 
 on:
   push:
@@ -10,6 +10,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Authenticate API
-        run: |
-          curl -H "Authorization: Bearer ${{ secrets.API_KEY }}" https://api.example.com
+      - name: Test API Secret
+        run: echo "API KEY = ${{ secrets.API_KEY }}"
